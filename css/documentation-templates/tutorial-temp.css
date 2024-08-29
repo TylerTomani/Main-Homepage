@@ -1,0 +1,90 @@
+main {
+    border-top: 1px solid blue;
+    display: flex
+}
+aside {
+    word-wrap: break-word;
+    /* Ensure long words or URLs break and do not overflow */
+    overflow-wrap: break-word;
+    /* Ensure text wraps within the container */
+    border-right: 1px solid black;
+    height: 100vmax;
+    flex-basis: 15%;
+}
+
+aside a {
+    display: block;
+    /* Make links block-level elements to control wrapping */
+    word-break: break-all;
+    /* Break words if necessary */
+}
+aside > ul {
+    margin-left: 4%;
+    margin-top: 10%;
+}
+
+aside > ul > li {
+    margin-bottom: 5%;
+}
+aside > ul > li:nth-child(2) {
+    margin-bottom: 0%;
+}
+aside > ul > li > ul{
+    margin-left: 1%;
+    /* white-space: wrap; */
+    margin-top: 5%;
+}
+aside > ul > li:nth-child(2) > ul{
+    margin-left: 0%;
+    margin-top: 5%;
+}
+aside > ul > li > ul> li{
+    margin: 5% 0;
+    /* white-space: nowrap; */
+    white-space: nowrap;
+    text-wrap: pre-wrap;
+}
+aside > ul > li > ul> li a{
+    text-decoration: none;
+}
+#targetDiv{
+    height: 100vmax;
+    width:  90vmax;
+    padding: 0 1%;
+}
+#targetDiv:active,#targetDiv:focus,
+main > aside:active,main > aside:focus{box-shadow: 0 0 4px 4px lightseagreen;}
+.hide {display: none;}
+
+
+
+@media  screen and (min-width: 1400px) {
+    #targetDiv {
+     /* flex-basis: 90%; */
+    }
+    aside {
+        /* flex-basis: 10%; */
+       }
+}
+@media  screen and (max-width: 1400px) {
+    aside {
+        font-size: 80%;
+    }
+}
+@media  screen and (max-width: 1050px) {
+    aside {
+        font-size: 80%;
+    }
+}
+@media  screen and (max-width: 800px) {
+    aside {
+        flex-basis: 30% ;
+        font-size: 80%;
+    }
+}
+@media  screen and (max-width: 600px) {
+    aside {
+        flex-basis: 50% ;
+        font-size: 80%;
+    }
+}
