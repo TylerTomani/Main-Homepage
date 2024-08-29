@@ -56,12 +56,15 @@ main > h2 {
     text-decoration: none;
     box-shadow: 0 0 1px 1px white; 
     /* color: white; */
+    background-color: white;
     border-radius: 5px;
     padding: .5% 0;
     padding-left: 1.5%;
     margin-bottom: 1%;
     display: inline-block;
-    width: 100%;
+    /* width: 100%; */
+    width: 50%;
+    display: inline-block;
 }
 .resource-container>.dropResource {
     text-wrap: none;
@@ -80,14 +83,14 @@ main > h2 {
 
 .topics-container > .topic{
     flex-basis: 10%;    
-    border: 1px solid rgb(0,0,0,.5); 
-    /* border-radius: 2px; */
-    /* padding:.5%; */
-    /* text-decoration: none; */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* white-space: nowrap; */
-    /* text-wrap: nowrap;  */
+    border: 1px solid rgb(0,0,0,.5);
+    border-radius: 2px;
+    padding:.5%;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    text-wrap: nowrap;
     /* margin-bottom: 2.5%; */
 }
 .topics-container > .topic > h4 {
