@@ -30,7 +30,6 @@ main > h2 {
     display: inline-block;
     padding: 0 1%;
     color: royalblue;
-    border: var(--main-b);
 }
 .resources-container {  
     display: flex;
@@ -89,13 +88,29 @@ main > h2 {
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    white-space: nowrap;
-    text-wrap: nowrap;
-    /* margin-bottom: 2.5%; */
+    white-space: wrap;
+    text-wrap: wrap;
+    width: fit-content;
+    position: relative;
 }
 .topics-container > .topic > h4 {
+    position: absolute;
     font-size: 100%;
-    /* color: black; */
+    text-wrap: wrap;
+    color: black;
+    z-index: 1
+
+}
+.topics-container > .topic > h5 {
+    position: absolute;
+    bottom: 0;
+    font-size: 80%;
+    width: 90%;
+    white-space: wrap;
+    text-wrap: wrap;
+    color: black;
+    z-index: 1
+
 }
 .topic > img {
     width:  100%;
