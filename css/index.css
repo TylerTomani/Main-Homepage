@@ -10,12 +10,12 @@
     color:var(--font-color)
 }
 body {
-    /* background-image: linear-gradient(
+    background-image: linear-gradient(
         to left, 
         rgb(255, 165, 0,.4), 
         rgb(255, 255, 0,.2), 
         rgba(0, 102, 255, 0.2));
-        ; */
+        ;
 }
 /* h2:focus,h2:active{
     box-shadow: 0 0 4px 4px lightseagreen;
