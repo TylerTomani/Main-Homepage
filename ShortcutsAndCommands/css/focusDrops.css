@@ -1,0 +1,28 @@
+main {
+    margin: 0 2.5%
+}
+.sections-container {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    /* width: 80%; */
+}
+.section {
+    display: flex;
+    flex-direction: column;
+}
+.section > .sub-section {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.section > .sub-section > *{
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+}
+
+.hide {
+    display: none;
+}

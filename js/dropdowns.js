@@ -2,6 +2,7 @@ const allEls = document.querySelectorAll('body *')
 const dropResources = document.querySelectorAll('.dropResource')
 const topics = document.querySelectorAll('.topic')
 const topicsContainers = document.querySelectorAll('.topics-container')
+const dropSections = document.querySelectorAll('.drop-section')
 let allIdEls = []
 let sorted = [] 
 function hideShowTopicsContainers(){
@@ -62,7 +63,23 @@ function toggleTopicsContainer(e){
         resourcesContainer.classList.remove('fcol')
     }
 }
+dropSections.forEach(el => {
+    el.addEventListener('click', e => {
+        const section = getSection(e.target.parentElement)
+        const resourcesContainer = section.querySelector('.resources-container')
+        resourcesContainer.classList.toggle('hide')
 
+    })
+})
+function getSection(parent){
+    if(parent.classList.contains('section')){
+        return parent
+    } else if (parent.parentElement){
+        return getSection(parent.parentElement)
+    } else {
+        return null
+    }
+}
 function getResourcesContainer(parent){
     if(parent.classList.contains('resources-container')){
         return parent
