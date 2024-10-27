@@ -1,0 +1,80 @@
+:root {
+    --primary-bg-color: #27282b;
+    --gb_a-user-icon-hw: 52px
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+header.gb_jd-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2.5%
+}
+header.gb_jd-header > a.gb_a-google-user-icon {
+}
+a.gb_a-google-user-icon:active,
+a.gb_a-google-user-icon:focus {
+    border: 2px solid blue;
+}
+ a.gb_a-google-user-icon > img {
+    border-radius: 50%;
+    display: block;
+    margin: 0px;
+    position: relative;
+    height: var(--gb_a-user-icon-hw);
+    width:  var(--gb_a-user-icon-hw);
+ }
+ .languages-container {
+     border: 4px dashed white;
+     background-color: darkslategray;
+
+ }
+.translation-container {
+    width: 45%;
+    border: 3px dashed magenta;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: var(--primary-bg-color);
+}
+
+.translation-container .dropdown{
+    width: 40%;
+    
+}
+.switch-speed-container {
+    display: flex;
+    background-color: lightblue;
+    justify-content: space-evenly;
+}
+.switch-speed-container i{
+    color: black;
+}
+.switch-speed-container #switch-icons{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+.translation-container textarea {
+    background-color: var(--primary-bg-color);
+    padding: .5% 1%;
+}
+.translation-container > .entered-language,
+.translation-container> .translated-language {
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    border: 2px solid blue;
+}
+.translation-container>*:active,.translation-container>*:focus {
+    box-shadow: 0 0 3px 3px whitesmoke;
+
+}
+.translation-container>* > textarea{
+    height: 25vh;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1rem;
+}
