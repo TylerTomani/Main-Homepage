@@ -14,8 +14,7 @@ body {
     rgba(0, 102, 255, 0.2),
     rgb(255, 255, 0,.2),
     rgb(255, 165, 0,.4), 
-    rgb(255, 255, 0,.2))
-;
+    rgb(255, 255, 0,.2));
     width: 100%;
     overflow-x: hidden;
 }
@@ -27,7 +26,8 @@ main {
     display: flex;
     flex-direction: column;
     width: fit-content;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
+    width: 90%;
 }
 main > h2 {
     margin: .5% 0;
@@ -180,28 +180,33 @@ a:focus,a:active{
     margin-top: 4%;
     padding: 1% 2%;
 }
-@media screen and (max-width: 600px){
-    header{
+@media screen and (max-width: 600px) {
+    header {
         /* margin-bottom:1%; */
 
     }
+
     main {
         padding-top: 1.5%;
     }
-    .resources-container{
+
+    .resources-container {
         flex-direction: column;
         flex-wrap: nowrap;
-        
+
     }
-    .resources-container > .resource-container{
+
+    .resources-container>.resource-container {
         margin: 2% 0;
     }
-    .resource-container > .topics-container {
+
+    .resource-container>.topics-container {
         padding-top: 2.5%;
         gap: 5%;
-        
+
     }
-    .topics-container > .topic {
+
+    .topics-container>.topic {
         margin: 2.5% 0;
     }
 }
