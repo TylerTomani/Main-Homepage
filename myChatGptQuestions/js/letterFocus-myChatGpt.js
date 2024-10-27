@@ -23,36 +23,41 @@ addEventListener('keydown', e => {
             break
         case 'm':
             mainTargetDiv.focus()
+            scrollTo(0,0)
             break
     }
-    /** Slight problem, when Freecodecamp is collapsed, pressing the 'f' key 
-     * does not go to the next element showing which right now is FHIR
-     */
     
     letterIds = []
     if(letter == 'h'){
         scrollTo(0,0)
     }
     
-        
-    allIdEls.forEach(el => {
-        if (letter == el.id[0].toLowerCase() && !el.classList.contains('hide')) {
-            letterIds.push(el)
-        }
-    })
-    // console.log(letterIds)
-    if(letterIds){
-        if (currentLetter == letter ) {
-            iLetter = (iLetter + 1) % letterIds.length
-            if(letterIds[iLetter])
-            letterIds[iLetter].focus()
-            
-        } else if (letterIds.length > 0) {
-            iLetter = 0
-            letterIds[0].focus()
-        }
-    }
-    currentLetter = letter
-    currentEl = e.target
+    // if (!mainTargetDivFocused){
+
+    //     allIdEls.forEach(el => {
+    //         if (letter == el.id[0].toLowerCase() && !el.classList.contains('hide')) {
+    //             letterIds.push(el)
+    //         }
+    //     })
+    //     // console.log(letterIds)
+    //     if(letterIds){
+    //         if (currentLetter == letter ) {
+    //             iLetter = (iLetter + 1) % letterIds.length
+    //             if(letterIds[iLetter])
+    //                 letterIds[iLetter].focus()
+                
+    //         } else if (letterIds.length > 0) {
+    //             iLetter = 0
+    //             letterIds[0].focus()
+    //         }
+    //     }
+    //     currentLetter = letter
+    //     currentEl = e.target
+    // }
 });
 
+const questions = document.querySelectorAll('.dropQuestion')
+
+questions.forEach(el => {
+
+})
