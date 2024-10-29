@@ -1,5 +1,6 @@
 export const mainTargetDiv = document.getElementById('mainTargetDiv')
 import { addCopyCodes } from "./copy-code-export.js"
+import { handleQuestions } from "./toggleQuestions.js"
 const topics = document.querySelectorAll('.topics-container > li > a')
 let clicked = false
 topics.forEach(el => {
@@ -31,6 +32,7 @@ function fetchLessonHref(href) {
             mainTargetDiv.innerHTML = html;
             ////////////// This function is located in lesson-temp.js ////////////////////////////////////////////////////////////////////////////////////
             addCopyCodes()
+            handleQuestions()
             
         })
         .catch(error => console.log('Error fetching content.html:', error));

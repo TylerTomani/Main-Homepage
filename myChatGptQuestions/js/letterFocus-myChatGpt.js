@@ -1,6 +1,7 @@
 export const toggleDraggable = document.querySelector('#toggleSideBtn')
 import { mainTargetDiv } from "./questionsLoad.js"
 const allIdEls = document.querySelectorAll('[id]')
+const homelink = document.getElementById('homelink')
 // iLetter is index to increment up thru letterIds
 let iLetter
 let currentLetter
@@ -15,45 +16,54 @@ addEventListener('DOMContentLoaded', e => {
 mainTargetDiv.addEventListener('focus', e => {
     mainTargetDivFocused = true
 })
+mainTargetDiv.addEventListener('focusout', e => {
+    mainTargetDivFocused = false
+})
 addEventListener('keydown', e => {
     let letter = e.key.toLowerCase()
-    switch (letter){
+    letterIds = []
+
+    if (!mainTargetDivFocused){
+
+        allIdEls.forEach(el => {
+            if (letter == el.id[0].toLowerCase() && !el.classList.contains('hide')) {
+                letterIds.push(el)
+            }
+        })
+        // console.log(letterIds)
+        if(letterIds){
+            if (currentLetter == letter ) {
+                iLetter = (iLetter + 1) % letterIds.length
+                if(letterIds[iLetter])
+                    letterIds[iLetter].focus()
+                
+            } else if (letterIds.length > 0) {
+                iLetter = 0
+                letterIds[0].focus()
+            }
+        }
+        currentLetter = letter
+        currentEl = e.target
+    }
+    switch (letter) {
         case 'a':
+            toggleDraggable.focus()
+            break
+        case 's':
             toggleDraggable.focus()
             break
         case 'm':
             mainTargetDiv.focus()
-            scrollTo(0,0)
+            scrollTo(0, 0)
+            break
+        case 'h':
+            homelink.focus()
+            scrollTo(0, 0)
             break
     }
-    
-    letterIds = []
-    if(letter == 'h'){
-        scrollTo(0,0)
+    if (letter == 'h') {
+        scrollTo(0, 0)
     }
-    
-    // if (!mainTargetDivFocused){
-
-    //     allIdEls.forEach(el => {
-    //         if (letter == el.id[0].toLowerCase() && !el.classList.contains('hide')) {
-    //             letterIds.push(el)
-    //         }
-    //     })
-    //     // console.log(letterIds)
-    //     if(letterIds){
-    //         if (currentLetter == letter ) {
-    //             iLetter = (iLetter + 1) % letterIds.length
-    //             if(letterIds[iLetter])
-    //                 letterIds[iLetter].focus()
-                
-    //         } else if (letterIds.length > 0) {
-    //             iLetter = 0
-    //             letterIds[0].focus()
-    //         }
-    //     }
-    //     currentLetter = letter
-    //     currentEl = e.target
-    // }
 });
 
 const questions = document.querySelectorAll('.dropQuestion')
