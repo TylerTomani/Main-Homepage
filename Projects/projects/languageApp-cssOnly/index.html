@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language App</title>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/header.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="js/letterFocus.js"></script>
 </head>
@@ -30,14 +31,14 @@ I need to write some code
 Translation
                     </textarea>
                 </div>
-                <div class="switch-lang-container">
+                <div class="change-lang-container">
                     <select class="dropdown" name="options">
                         <option value="english">english</option>
                         <option value="chinese">chinese</option>
                         <option value="russian">russian</option>
                         <option value="spanish">spanish</option>
                     </select>
-                    <div tabindex="0" id="switch-icons">
+                    <div tabindex="0" id="change-lang-icons">
                         <i class='bx bx-left-arrow-alt'></i>
                         <i class='bx bx-right-arrow-alt'></i>
                     </div>
@@ -57,7 +58,47 @@ Translation
                     <button tabindex="0" >x 1.5</button>
                 </div>
             </div>
+            <div class="saved-sentences">
+                <div class="catagory-sentences">
+                    <header>
+                        <h2>(sort by catagory)</h2>                 
+                    </header>
+                    <div class="catagories-container">
+                        <div class="catagory">
+                            <h3><a href="#">Cleaning</a></h3>
+                            <div class="sentences-container">
+                                <div class="sentence">
+                                    <p>
+                                        mi apartamento es sucio y muy disorginizado                                 
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="date-sentences">
+                    <header>
+                        <h2>(sort by date)</h2>                 
+                    </header>
+                    <div class="weeks-container">
+                        <div class="week">
+                            <h3><a href="#">Week 1</a></h3>
+                            <div class="sentences-container">
+                                <div class="sentence">
+                                    <p> 
+                                        Tengo que limpiar mi apartmento
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
         </div>
+
     </main>
 </body>
 </html>
