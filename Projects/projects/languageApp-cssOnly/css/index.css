@@ -100,6 +100,21 @@
     /* padding:5%; */
 }
 
+.saved-sentences>.category-sentences,
+.saved-sentences>.date-sentences {
+    /* border: 1px solid black; */
+    /* padding:5%; */
+}
+
+.categories-container>.category,
+.weeks-container>.week {
+    /* border: 1px solid black; */
+}
+
+.sentence {
+    border: 1px solid black;
+}
+
 @media screen and (max-width:650px) {
     .translation-container {
         width: 100%;
