@@ -68,14 +68,15 @@ main > .translation-container {
 }
 #translateBtn.active {
     position: absolute;
-    top: 50%;
+    top: 35%;
     right: -1.5%;
     z-index: 1;
     border-radius: 10px;
     font-size: 150%;
+    color: white;
     background-color: blue;
-    display: block;
     border: 2px solid blue;
+    display: block;
 }
 
 .change-lang-container,

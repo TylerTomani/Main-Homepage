@@ -40,8 +40,6 @@ translationTextArea.addEventListener('keydown', e => {
     
 })
 translateBtn.addEventListener('click', e => {
-    // e.preventDefault()
-    console.log('clicked')
     translationTextArea.classList.add('active')
     translationTextArea.focus()
     translateBtn.classList.remove('active')
