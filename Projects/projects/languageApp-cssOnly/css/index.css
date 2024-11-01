@@ -27,14 +27,14 @@ main > .translation-container {
     border: 4px dashed blue;
     margin: 0 auto;
 }
-
-.translation-container>.entered-language {
+.translation-container>.translate-sentence {
     margin-top: 10%;
+    margin-bottom: 5%;   
     height: 15vh
 }
 
-.translation-container>.entered-language textarea :active,
-.translation-container>.translated-language textarea :focus {
+.translation-container>.translation-sentence textarea :active,
+.translation-container>.translation textarea :focus {
     box-shadow: 0 0 3px 3px whitesmoke;
 }
 
@@ -49,25 +49,21 @@ main > .translation-container {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1rem;
 }
-
-.translation-container>.translated-language>textarea {
+.translation-container>.translation>textarea {
     border: 2px solid blue;
 }
-
-.translation-container>.entered-language>textarea {
+.translation-container>.translate-sentence>textarea {
     /* border: 2px solid lime; */
     /* height: 20vh; */
     /* Adjust height as needed */
     padding-top: 5%;
     /* Pushes text to the bottom */
     box-sizing: border-box;
+    
     /* Ensures padding is considered in total height */
     resize: none;
 }
 
-.translation-container>*>textarea::placeholder {
-    color: lightgrey
-}
 
 .translation-container .dropdown {
     /* width: 40%; */
@@ -122,3 +118,6 @@ main > .translation-container {
     }
 
 }
+
+
+
