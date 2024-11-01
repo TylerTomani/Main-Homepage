@@ -1,7 +1,9 @@
-const homelink = document.getElementById('homelink')
+import { homelink } from "./letterfocus-index.js"
+
 const from = document.getElementById('from')
 const to = document.getElementById('to')
 const invoiceNum = document.querySelector('#invoice_num > #number_label')
+const itemsContainer = document.querySelector('#items-container')
 const allEls = document.querySelectorAll('body *')
 
 allEls.forEach(el => {
@@ -21,8 +23,14 @@ addEventListener('keydown', e => {
         homelink.focus()
     }
     if(letter == 'i'){
-        scrollTo(0,0)
-        invoiceNum.focus()
+        if(e.target == invoiceNum){
+            console.log('invoice')
+            scrollTo(0,0)
+            invoiceNum.focus()
+        } else if (e.target == itemsContainer){
+            console.log('items')
+
+        }
     }
     if(letter == 't'){
         scrollTo(0,0)

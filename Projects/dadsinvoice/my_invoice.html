@@ -4,19 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>my_invoice</title>
-    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="../css/single-header-temp.css">
     <link rel="stylesheet" href="css/bordersBackgrounds.css">
     <link rel="stylesheet" href="css/invoice.css">
-    <script src="js/letterFocus-invoice.js" defer></script>
+    <link rel="stylesheet" href="css/index.css">
+    <script type="module" src="js/letterFocus-invoice.js" defer></script>
+    <script type="module" src="js/letterfocus-index.js" defer></script>
 </head>
 <body>
+    
     <header>
-        <h1>my_Invoices</h1>
-        
-        <br>
-        <a id="homelink" href="index.html">home</a>
-        <a href="invoice.html">invoice page</a>
+        <a id="homelink" href="index.html">Home (this page)</a>
+        <h1>invoices </h1>
     </header>
+    <nav>
+        <ul>
+            <li><a id="invoicePage" href="my_invoice.html">invoice</a></li>
+            <li><a id="listPage" href="#">list</a></li>
+        </ul>
+    </nav>
+    
     <main>
         <div class="invoice-container">
             <div id="invoiceHeading"
@@ -189,6 +196,7 @@ Mike Tomani 585-203-6767</textarea>
                             name="invoice_date" value="10/30/2024" class="hasDatepicker">
                     </div>
                 </div>
+                <!-- Due Date -->
                 <div id="invoice_due_date">
                     <div id="due_date_label"
                         style="padding-right:8px;text-align:right;font-weight:bold;font-family:verdana;font-size:13px;color:#3c3c3c;">
@@ -207,7 +215,7 @@ Mike Tomani 585-203-6767</textarea>
     <!-- invoice container -->
     <tbody>
         <!-- Item / Description / Unit Price / Quantiy Amount (royalblue background)-->
-        <tr>
+        <tr id="items-container">
             <td colspan="100" style="width:100%;vertical-align:top;padding-top:35px;">
                 <!-- TB 4 -->
                 <input type="hidden" id="swapOccurred" name="swapOccurred" value="0" defaultvalue="0">
