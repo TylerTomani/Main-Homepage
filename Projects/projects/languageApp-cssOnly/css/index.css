@@ -2,33 +2,30 @@
     --primary-bg-color: #27282b;
     --gb_a-user-icon-hw: 52px
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-.languages-container {
-    border: 4px dashed blue;
-    display: flex;
-    width: 90%;
-    margin: 0 auto;
-}
-
-.languages-container>.translation-container,
-.languages-container>.saved-sentences {
-    flex-basis: 50%;
-    padding: 5%;
-}
-
-.languages-container>.translation-container {
-    padding-top: 5%;
-    padding-top: 20%;
+main {
     display: flex;
     flex-direction: column;
+}
+main > .translation-container,
+main > .saved-sentences {
+    /* flex-basis: 50%; */
+    padding: 5%;
+}
+main > .translation-container {
+    width: 90%;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     color: white;
     background-color: var(--primary-bg-color);
+    border: 4px dashed blue;
+    margin: 0 auto;
 }
 
 .translation-container>.entered-language {
@@ -44,7 +41,7 @@
 .translation-container>*>textarea {
     /* border: 2px solid blue; */
     background-color: var(--primary-bg-color);
-    padding-top: 4%;
+    /* padding-top: 4%; */
     padding-left: 5%;
     width: 100%;
     height: 100%;
@@ -61,7 +58,7 @@
     /* border: 2px solid lime; */
     /* height: 20vh; */
     /* Adjust height as needed */
-    padding-top: 15%;
+    padding-top: 5%;
     /* Pushes text to the bottom */
     box-sizing: border-box;
     /* Ensures padding is considered in total height */
@@ -86,29 +83,18 @@
     /* margin-top: 2.5%; */
     /* border: 1px solid lime; */
 }
-
 .change-lang-container i {
     color: white;
-
 }
-
 .change-lang-container #change-lang-icons {
     display: flex;
     flex-direction: column;
     border: 1px solid black;
 }
-
-.speed-container {
-    /* display: flex; */
-    /* padding: 2.5% 0; */
-    /* justify-content: space-evenly; */
-}
-
 .speed-container button {
     padding: 1% 2%;
     font-size: 90%;
 }
-
 .saved-sentences {
     /* border: 1px solid black; */
     /* padding:5%; */
@@ -119,16 +105,13 @@
     /* border: 1px solid black; */
     /* padding:5%; */
 }
-
 .categories-container>.category,
 .weeks-container>.week {
     /* border: 1px solid black; */
 }
-
 .sentence {
     border: 1px solid black;
 }
-
 @media screen and (max-width:650px) {
     .translation-container {
         width: 100%;
