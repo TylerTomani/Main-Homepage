@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/header.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="js/letterFocus.js" defer></script>
+    <script type="module" src="js/letterFocus.js" defer></script>
+    <script type="module" src="js/translate.js" defer></script>
 </head>
 <body>
     <!-- gb_jd is the name google using for its header -->
@@ -26,16 +27,18 @@
             <div class="translate-sentence">
                 <textarea tabindex="0" name="" id="" class="blinking-textarea"
                  placeholder="tengo que terminar esta pagina web, (translate-sentence)"></textarea>
+                <button tabindex="0" id="translateBtn" class='bx bx-right-arrow-alt'></button>
             </div>
             <div class="translation">
-                <textarea tabindex="0" name="" id=""placeholder="(..translation) - hide for now" ></textarea>
+                <textarea class="" tabindex="0"  name="" id=""placeholder="(..translation) - hide for now" ></textarea>
             </div>
+            
             <div class="change-lang-container">
                 <select class="dropdown" name="options">
                     <option value="english">english</option>
                     <option value="chinese">chinese</option>
                     <option value="russian">russian</option>
-                    <option value="spanish">spanish</option>
+                    <option selected value="spanish">spanish</option>
                 </select>
                 <div tabindex="0" id="change-lang-icons">
                     <i class='bx bx-left-arrow-alt'></i>
@@ -49,10 +52,10 @@
                 </select>
             
             </div>
-            <div class="speed-container">
+            <div class="play-container">
                 <button tabindex="0" >.5</button>
                 <button tabindex="0" >.75</button>
-                <button tabindex="0" >normal</button>
+                <button id="playBtn" class='bx bx-play'></button>
                 <button tabindex="0" >x 1.25</button>
                 <button tabindex="0" >x 1.5</button>
             </div>

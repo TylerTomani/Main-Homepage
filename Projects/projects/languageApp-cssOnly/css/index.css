@@ -30,7 +30,8 @@ main > .translation-container {
 .translation-container>.translate-sentence {
     margin-top: 10%;
     margin-bottom: 5%;   
-    height: 15vh
+    height: 15vh;
+    position: relative;
 }
 
 .translation-container>.translation-sentence textarea :active,
@@ -49,28 +50,36 @@ main > .translation-container {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1rem;
 }
-.translation-container>.translation>textarea {
+.translation-container>.translate-sentence>textarea {
+    padding-top: 5%;
+}
+.translation-container>.translation >textarea {
+    display: none
+}
+.translation-container>.translation >textarea.active {
+    display: block;
     border: 2px solid blue;
 }
-.translation-container>.translate-sentence>textarea {
-    /* border: 2px solid lime; */
-    /* height: 20vh; */
-    /* Adjust height as needed */
-    padding-top: 5%;
-    /* Pushes text to the bottom */
-    box-sizing: border-box;
-    
-    /* Ensures padding is considered in total height */
-    resize: none;
+#translateBtn{
+    display: none;
 }
-
-
-.translation-container .dropdown {
-    /* width: 40%; */
+#translateBtn:active,#translateBtn:focus,#translateBtn:hover{
+    box-shadow: 0 0 3px 3px whitesmoke;
+}
+#translateBtn.active {
+    position: absolute;
+    top: 50%;
+    right: -1.5%;
+    z-index: 1;
+    border-radius: 10px;
+    font-size: 150%;
+    background-color: blue;
+    display: block;
+    border: 2px solid blue;
 }
 
 .change-lang-container,
-.speed-container {
+.play-container {
     display: flex;
     align-self: center;
     justify-content: space-evenly;
@@ -87,7 +96,7 @@ main > .translation-container {
     flex-direction: column;
     border: 1px solid black;
 }
-.speed-container button {
+.play-container button {
     padding: 1% 2%;
     font-size: 90%;
 }
