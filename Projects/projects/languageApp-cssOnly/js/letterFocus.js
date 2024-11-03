@@ -27,7 +27,6 @@ addEventListener('keydown', (e) => {
     if (letter === 'shift') {
         keys.shift.pressed = true;
     }
-    console.log(textareaFocus)
     if (!textareaFocus) {
         if (letter === 't') {
             scrollTo(0, 0);

@@ -60,12 +60,40 @@ main > .translation-container {
     display: block;
     border: 2px solid blue;
 }
+#pasteBtn.active {
+    position: absolute;
+    bottom: -10%;
+    left: 5%;
+    z-index: 1;
+    border-radius: 10px;
+    font-size: 150%;
+    color: white;
+    background-color: blue;
+    border: 2px solid blue;
+    display: block;
+}
+
+
+#pasteBtn,
 #translateBtn{
     display: none;
 }
 #translateBtn:active,#translateBtn:focus,#translateBtn:hover{
     box-shadow: 0 0 3px 3px whitesmoke;
 }
+#translateBtn.active {
+    position: absolute;
+    top: 35%;
+    right: -1.5%;
+    z-index: 1;
+    border-radius: 10px;
+    font-size: 150%;
+    color: white;
+    background-color: blue;
+    border: 2px solid blue;
+    display: block;
+}
+
 #translateBtn.active {
     position: absolute;
     top: 35%;
