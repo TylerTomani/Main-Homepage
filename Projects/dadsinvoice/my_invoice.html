@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>my_invoice</title>
     <link rel="stylesheet" href="../css/single-header-temp.css">
-    <link rel="stylesheet" href="css/bordersBackgrounds.css">
+    <!-- <link rel="stylesheet" href="css/bordersBackgrounds.css"> -->
     <link rel="stylesheet" href="css/invoice.css">
     <link rel="stylesheet" href="css/index.css">
-    <script type="module" src="js/letterFocus-invoice.js" defer></script>
-    <script type="module" src="js/letterfocus-index.js" defer></script>
+    <script src="js/letterFocus-invoice.js" defer></script>
+    <!-- <script type="module" src="js/letterfocus-index.js" defer></script> -->
 </head>
 <body>
     
@@ -26,28 +26,24 @@
     
     <main>
         <div class="invoice-container">
-            <div id="invoiceHeading"
-                style="font-size:28px;font-weight:bold; letter-spacing:5px; font-family:arial;color:#808080;">
-                <div id="invoiceHeadlineNoLogo" style="position:relative; z-index:1; margin-bottom:-14px;">
+            <div id="invoiceHeading">
+                <div id="invoiceHeadlineNoLogo" >
                     <input class="bb1" id="invoice_heading"
                         onchange="document.getElementById('invoice_heading_copy').value=this.value"
-                        style="text-align:right; padding-top:3px; padding-bottom:3px; padding-right:8px; width:250px; font-weight:bold; letter-spacing:5px; font-family:arial;font-size:28px;color:#808080;"
                         class="invoiceForm_fromNameTD" onfocus="this.className='invoiceForm_fromNameTD_onFocus';"
                         onblur="this.className='invoiceForm_fromNameTD';" type="text" name="invoice_heading" value="INVOICE">
                 </div>
             </div>
-            <div class="to-from-container by">
-                <div tabindex="0" id="to" style="padding:0px; margin:0px;">
-                    <h3 style="font-size:18px;font-family:verdana;color:#3c3c3c;">To</h3>
-                    <div class="invoiceForm_fromNameTD b2" id="to_nameTD" style="position:static">
-                        <input autocomplete="nope" id="customer_name"
-                            style="display:none; outline:none;border:0px solid white;width:687px; padding-left:7px; font-weight:normal; font-family:verdana;font-size:13px;color:#3c3c3c;"
-                            type="text" >
-                        <input id="customer_id" style="display:none;">
+            <div class="to-from-container ">
+                <div tabindex="0" id="to">
+                    <h3 >To</h3>
+                    <!-- New Customer -->
+                    <div class="invoiceForm_fromNameTD b2" id="to_nameTD" >
+                        <!-- <input autocomplete="nope" id="customer_name"    
+                            type="text" > -->
+                        <!-- <input id="customer_id" style="display:none;"> -->
                         <select id="to_name" name="to_id" onfocusin="field_onfocus(this,'');" onfocus="field_onfocus(this,'');"
-                            onblur="field_onblur(this,'');" onchange="getCustomerAddress(this.value);"
-                            style="outline:none;border:0px solid white;width:100%; padding-left:4px; font-weight:normal; font-family:verdana;font-size:13px;height:100%;color:#3c3c3c;">
-                        
+                            onblur="field_onblur(this,'');" onchange="getCustomerAddress(this.value);">
                             <option value="17455125">Brian Mintz</option>
                             <option value="27506549">Daniel &amp; Jeanne Pavlina</option>
                             <option value="18476866">Ed Ziegler</option>
@@ -68,7 +64,7 @@
                             <option value="21031380">Vilas Savant</option>
                             <optgroup label="-----------------------------">
                         
-                                <option style="margin:0px; padding:0px; padding-left:2px;" value="0" selected="">New Customer</option>
+                                <option   value="0" selected="">New Customer</option>
                         
                             </optgroup>
                         </select>                
@@ -91,17 +87,18 @@
                             onmouseout="document.getElementById('edit_customer_msg').style.display='none';"
                             onmouseover="document.getElementById('edit_customer_msg').style.display='';" onclick="edit_this_name();"
                             style="background:none; padding:0; position:relative; top:2px; float:right; margin:0 1px 0 0; border:0; cursor:pointer;display:none;"><img
-                                style="padding-left:3px;vertical-align:bottom;margin-bottom:1px;" src="images/edit_customer.png">
+                                >
                         </button>
                         <span id="edit_customer_msg"
                             style="display:none;font-size:11px;padding:7px; position:absolute;width:190px;background:#EFF7FA; border:1px solid #cccccc; color:black; font-weight:normal;font-family:verdana;left:100%;top:0;">Click
                             here to edit the name of this customer.<br><br>To create a new customer,select "New Customer" at the bottom of the drop-down to the left.
                         </span>
-                        <span id="edit_customer_msg_save" style="display:none;font-size:11px;padding:7px; position:absolute;width:190px;background:#EFF7FA; border:1px solid #cccccc; color:black; font-weight:normal;font-family:verdana;left:100%; top:0;">Click
+                        <span id="edit_customer_msg_save" 
+                        style="display:none;font-size:11px;padding:7px; position:absolute;width:190px;background:#EFF7FA; border:1px solid #cccccc; color:black; font-weight:normal;font-family:verdana;left:100%; top:0;"
+                        >Click
                             outside the field to save the customer's name
                         </span>
                         </td>
-                        
                         <button type="button" id="edit_customer_name"
                             onmouseout="document.getElementById('edit_customer_msg').style.display='none';"
                             onmouseover="document.getElementById('edit_customer_msg').style.display='';" onclick="edit_this_name();"
@@ -120,10 +117,10 @@
                             outside the field to save the customer's name
                         </span>
                     </div>
-                    <div id="to_new_customerTR" style="height:25px;">
+                    <!-- Customer name -->
+                    <div id="to_new_customerTR" style=>
                         <td class="invoiceForm_fromNameTD" id="to_new_customerTD">
                             <input id="to_new_customer" autocomplete="nope"
-                                style="outline:none;border:0px solid white;width:287px; padding-left:7px; font-weight:normal; font-family:verdana;font-size:13px;color:silver;"
                                 type="text" name="to_new_customer" onfocus="field_onfocus(this,'Customer name');"
                                 onblur="field_onblur(this,'Customer name');" value="Customer name">
                         </td>
@@ -131,25 +128,22 @@
                     <div id="to_new_customerBlankTR" style="">
                         <td style="height:5px;"></td>
                     </div>
+                    <!-- Customer address -->
                     <textarea name="to_address" id="to_address" rows="4" cols="40" class="invoiceForm_fromNameTD"
-                        style="width:289px; overflow:auto; outline:none; padding:5px; font-weight:normal; font-family:verdana;font-size:13px;color:silver;"
                         onfocus="field_onfocus(this,'Customer address');" onblur="field_onblur(this,'Customer address');"
                         onkeyup="sz(this,4);">Customer address
                     </textarea>
 
                 </div>
-                <div tabindex="0" id="from" style="padding:0px; margin:0px;">
-                    <h3 style="font-size:18px;font-family:verdana;color:#3c3c3c;
-                        ">From
-                    </h3>
+                <div tabindex="0" id="from">
+                    <h3>From</h3>
                     <div class="invoiceForm_fromNameTD b1" id="from_nameTD">
                         <input id="from_name"
-                            style="outline:none;border:0px solid white;width:287px; padding-left:7px; font-weight:normal; font-family:verdana;font-size:13px;color:#3c3c3c;"
+                            
                             autocomplete="nope" type="text" name="from_name" onfocus="field_onfocus(this,'Your name');"
                             onblur="field_onblur(this,'Your name');" value="Hidden Oaks Contracting">
                     </div>
                     <textarea name="from_address" id="from_address" rows="4" cols="40" class="invoiceForm_fromNameTD"
-                        style="width: 289px; overflow: auto; outline: none; padding: 5px; font-weight: normal; font-family: verdana; font-size: 13px; color: rgb(60, 60, 60); background-color: rgb(255, 255, 255);"
                         onfocus="field_onfocus(this,'Your address');" onblur="field_onblur(this,'Your address');" onkeyup="sz(this,4);"
                         data-last-active-input="">
 1390 Jenks Place
@@ -210,338 +204,337 @@ Mike Tomani 585-203-6767</textarea>
                     </div>
                 </div>
             </div>
+            <!-- Item / Description / Unit Price / Quantiy Amount (royalblue background)-->
+            <tr id="items-container">
+                <td colspan="100" style="width:100%;vertical-align:top;padding-top:35px;">
+                    <!-- TB 4 -->
+                    <input type="hidden" id="swapOccurred" name="swapOccurred" value="0" defaultvalue="0">
+                    <table class="brb" id="dataTable" border="0" cellpadding="0" cellspacing="0" width="100%" style="vertical-align:top;">
+                        <tbody>
+                            <tr id="topRow" style="background-color:#54A0E7;height:30px;">
+                                <th style="width:14px;"></th>
+        
+                                <th id="item_headline"
+                                    style="height:30px; color:#FFFFFD;font-family:arial;font-size:14px;font-weight:400;padding-left:8px;text-align:left;">
+                                    Item</th>
+        
+                                <th id="description_headline"
+                                    style="color:#FFFFFD;font-family:arial;font-size:14px;font-weight:400;padding-left:5px;text-align:left;">
+                                    Description</th>
+        
+                                <th id="unit_price_headline"
+                                    style="color:#FFFFFD;font-family:arial;font-size:14px;font-weight:400;padding-left:0px;text-align:right;padding-right:4px;">
+                                    Unit Price</th>
+        
+                                <th id="quantity_headline"
+                                    style="color:#FFFFFD;font-family:arial;font-size:14px;font-weight:400;padding-left:0px;text-align:right;padding-right:4px;">
+                                    Quantity</th>
+        
+        
+        
+        
+                                <th id="topRowTax"
+                                    style="display:none;color:#FFFFFD;font-family:arial;font-size:14px;font-weight:400;padding-left:0px;text-align:right;padding-right:26px;padding-left:35px;">
+                                    Tax <input type="hidden" name="sales_tax_new_enabled" value="true"></th>
+        
+        
+                                <th id="amount_headline"
+                                    style="color:#FFFFFD;font-family:arial;font-size:14px;font-weight:400;padding-left:0px;text-align:right;padding-right:10px;">
+                                    Amount</th>
+        
+                            </tr>
+        
+        
+        
+        
+        
+                            <tr class="invoiceDataHeadRow">
+                                <input type="hidden" name="lineid[]" id="lineid[]" value="0">
+                                <input type="hidden" name="isdirty[]" id="isdirty[]" value="0">
+                                <input type="hidden" name="numRows" id="numRows" value="2">
+        
+                                <td class="invoiceDataDelete">
+                                    <!-- <img style="" onclick="zapthisrow(this,'dataTable');" border="0" title="Delete Line"
+                                        src="images/delete_item.gif"> -->
+                                </td>
+        
+        
+                                <td class="invoiceDataItem">
+        
+                                    <select onfocus="invoiceForm_changeBackground(this,'#FFFADC');"
+                                        onfocusin="objSelected=this; invoiceForm_changeBackground(this,'#FFFADC');"
+                                        onblur="invoiceForm_changeBackground(this,'#FFFFFF');" name="item[]" id="itemSelect0"
+                                        class="inputInvoiceDataItem ">
+        
+                                        <option value="" selected="selected"></option>
+                                        <option value="Days">Days</option>
+                                        <option value="Hours">Hours</option>
+                                        <option value="Product">Product</option>
+                                        <option value="Service">Service</option>
+                                        <option value="Expense">Expense</option>
+                                        <option value="Discount_aynax">Discount</option>
+                                    </select>
+                                    <input type="hidden" name="expense_category[]" value="Other Expenses">
+        
+                                </td>
+        
+        
+        
+                                <td class="invoiceDataDescription">
+        
+        
+        
+        
+        
+                                    <textarea name="description[]" id="description[]" rows="1" cols="40"
+                                        class="inputInvoiceDataDescription"
+                                        onfocus="invoiceForm_changeBackground(this,'#FFFADC');"
+                                        onblur="invoiceForm_changeBackground(this,'#FFFFFF');" onkeyup="sz(this);"></textarea>
+                                    <input type="hidden" name="expense_id[]" value="">
+                                    <input type="hidden" name="project_id[]" value="0">
+                                    <input type="hidden" name="hour_id[]" value="0">
+                                    <input type="hidden" class="jPaymentId" name="payment_id[]" value="0">
+        
+        
+                                </td>
+        
+        
+                                <td class="invoiceDataPriceOrQty">
+                                    <input name="unit_price[]" id="unit_price[]" type="text" autocomplete="nope"
+                                        class="inputInvoiceDataPriceOrQty" style="color:silver;"
+                                        onkeyup="sanitizeInvoiceLineValues(this);"
+                                        onblur="invoiceForm_changeBackground(this,'#FFFFFF');forceDiscountNegative(this);checkIfEmpty(this);reCalculate(this, 'dataTable', this.value);"
+                                        onfocus="valueItemFocus(this)" value="0.00">
+                                </td>
+        
+                                <td class="invoiceDataPriceOrQty">
+        
+                                    <input name="qty[]" id="qty[]" type="text" autocomplete="nope"
+                                        class="inputInvoiceDataPriceOrQty" style="color:silver;"
+                                        onkeyup="sanitizeInvoiceLineValues(this);"
+                                        onblur="invoiceForm_changeBackground(this,'#FFFFFF');checkIfEmpty(this);reCalculate(this, 'dataTable', this.value);"
+                                        onfocus="valueItemFocus(this)" value="0.00">
+        
+                                </td>
+        
+        
+        
+        
+        
+                                <td class="tax1 invoiceDataTax_hidden" style="">
+        
+                                    <!-- Note: The first input of class 'tax1' must be the total tax in order for the recalculate function in javascript.js to work.  -->
+                                    <input name="tax_total[]" id="tax_total[]" class="tax_total" type="hidden" value="0.00">
+        
+                                    <!-- tax inputs - for saving separate tax rates in invoice_line -->
+                                    <input type="hidden" name="tax[]" class="tax_rate" value="">
+                                    <input type="hidden" name="tax2[]" class="tax2_rate" value="">
+                                    <input type="hidden" name="tax3[]" class="tax3_rate" value="">
+        
+                                    <!-- tax-id inputs: -->
+                                    <input type="hidden" name="tax_id[]" class="tax_id" value="">
+                                    <input type="hidden" name="tax2_id[]" class="tax2_id" value="">
+                                    <input type="hidden" name="tax3_id[]" class="tax3_id" value="">
+        
+                                    <div style="position: relative;">
+        
+                                        <div class="downarrow currentTax" onclick="focusTaxSelect(this)"
+                                            style="font-size: 13px; padding: 5px; font-family: verdana; color: silver; background-color: rgb(255, 255, 255);"
+                                            data-groupid="">
+        
+                                            <span class="jtaxTotal">0.00% </span>
+                                            <!-- <img class="jActiveTax" src="images/dropdown_none.png"> -->
+                                            <!-- <img class="jInactiveTax" style="display:none" src="images/dropdown_none_grey.png"> -->
+        
+                                        </div>
+        
+                                        <div style="position: absolute; left:0; top:100%; max-width:180px; display:none; z-index:2; white-space:nowrap"
+                                            class="dropdown-sel">
+        
+                                            <ul class="tax_dropdown" style="font-family:verdana, sans-serif;">
+                                                <li style="border-bottom:1px solid #d2d2d2;"><label><input
+                                                            onclick="changeTaxSelect(this);" type="checkbox" class="NoTax"
+                                                            data-tax="0" checked=""><span>No Tax</span></label></li>
+        
+                                                <!--Tax components: -->
+        
+                                                <li style="border-top:1px solid #d2d2d2;"><label><input
+                                                            onclick="changeTaxSelect(this);" type="checkbox"
+                                                            class="NewTax"><span>New Tax</span></label></li>
+                                            </ul>
+        
+                                        </div>
+        
+                                    </div>
+        
+                                </td>
+                                <td class="invoiceDataTax_hidden"> <input> <!-- Empty td-input to mimic TAX2 --> </td>
+        
+        
+        
+        
+                                <td class="invoiceDataAmount">
+        
+                                    <div style="position: absolute;width: 88px;height: 32px;"
+                                        onclick="alert('The amount is calculated automatically as soon as you have entered something into both the unit price and the quantity field.\n\nExample: If you wish to invoice a service for $100.00, you should enter 100.00 in the unit price field and 1.00 in the quantity field.')">
+                                    </div>
+                                    <input name="total[]" id="total[]" type="text" autocomplete="nope" readonly=""
+                                        class="inputInvoiceDataAmount" value="0.00">
+        
+                                </td>
+        
+                            </tr>
+        
+        
+                            <tr class="invoiceDataHeadRow">
+                                <input type="hidden" name="lineid[]" id="lineid[]" value="1">
+                                <input type="hidden" name="isdirty[]" id="isdirty[]" value="0">
+                                <input type="hidden" name="numRows" id="numRows" value="2">
+        
+                                <td class="invoiceDataDelete">
+                                    <!-- <img style="" onclick="zapthisrow(this,'dataTable');" border="0" title="Delete Line"
+                                        src="images/delete_item.gif"> -->
+                                </td>
+        
+        
+                                <td class="invoiceDataItem">
+        
+                                    <select onfocus="invoiceForm_changeBackground(this,'#FFFADC');"
+                                        onfocusin="objSelected=this; invoiceForm_changeBackground(this,'#FFFADC');"
+                                        onblur="invoiceForm_changeBackground(this,'#FFFFFF');" name="item[]" id="itemSelect1"
+                                        class="inputInvoiceDataItem ">
+        
+                                        <option value="" selected="selected"></option>
+                                        <option value="Days">Days</option>
+                                        <option value="Hours">Hours</option>
+                                        <option value="Product">Product</option>
+                                        <option value="Service">Service</option>
+                                        <option value="Expense">Expense</option>
+                                        <option value="Discount_aynax">Discount</option>
+                                    </select>
+                                    <input type="hidden" name="expense_category[]" value="Other Expenses">
+        
+                                </td>
+        
+        
+        
+                                <td class="invoiceDataDescription">
+        
+        
+        
+        
+        
+                                    <textarea name="description[]" id="description[]" rows="1" cols="40"
+                                        class="inputInvoiceDataDescription"
+                                        onfocus="invoiceForm_changeBackground(this,'#FFFADC');"
+                                        onblur="invoiceForm_changeBackground(this,'#FFFFFF');" onkeyup="sz(this);"></textarea>
+                                    <input type="hidden" name="expense_id[]" value="">
+                                    <input type="hidden" name="project_id[]" value="0">
+                                    <input type="hidden" name="hour_id[]" value="0">
+                                    <input type="hidden" class="jPaymentId" name="payment_id[]" value="0">
+        
+        
+                                </td>
+        
+        
+                                <td class="invoiceDataPriceOrQty">
+                                    <input name="unit_price[]" id="unit_price[]" type="text" autocomplete="nope"
+                                        class="inputInvoiceDataPriceOrQty" style="color:silver;"
+                                        onkeyup="sanitizeInvoiceLineValues(this);"
+                                        onblur="invoiceForm_changeBackground(this,'#FFFFFF');forceDiscountNegative(this);checkIfEmpty(this);reCalculate(this, 'dataTable', this.value);"
+                                        onfocus="valueItemFocus(this)" value="0.00">
+                                </td>
+        
+                                <td class="invoiceDataPriceOrQty">
+        
+                                    <input name="qty[]" id="qty[]" type="text" autocomplete="nope"
+                                        class="inputInvoiceDataPriceOrQty" style="color:silver;"
+                                        onkeyup="sanitizeInvoiceLineValues(this);"
+                                        onblur="invoiceForm_changeBackground(this,'#FFFFFF');checkIfEmpty(this);reCalculate(this, 'dataTable', this.value);"
+                                        onfocus="valueItemFocus(this)" value="0.00">
+        
+                                </td>
+        
+        
+        
+        
+        
+                                <td class="tax1 invoiceDataTax_hidden" style="">
+        
+                                    <!-- Note: The first input of class 'tax1' must be the total tax in order for the recalculate function in javascript.js to work.  -->
+                                    <input name="tax_total[]" id="tax_total[]" class="tax_total" type="hidden" value="0.00">
+        
+                                    <!-- tax inputs - for saving separate tax rates in invoice_line -->
+                                    <input type="hidden" name="tax[]" class="tax_rate" value="">
+                                    <input type="hidden" name="tax2[]" class="tax2_rate" value="">
+                                    <input type="hidden" name="tax3[]" class="tax3_rate" value="">
+        
+                                    <!-- tax-id inputs: -->
+                                    <input type="hidden" name="tax_id[]" class="tax_id" value="">
+                                    <input type="hidden" name="tax2_id[]" class="tax2_id" value="">
+                                    <input type="hidden" name="tax3_id[]" class="tax3_id" value="">
+        
+                                    <div style="position: relative;">
+        
+                                        <div class="downarrow currentTax" onclick="focusTaxSelect(this)"
+                                            style="font-size: 13px; padding: 5px; font-family: verdana; color: silver; background-color: rgb(255, 255, 255);"
+                                            data-groupid="">
+        
+                                            <span class="jtaxTotal">0.00% </span>
+                                            <!-- <img class="jActiveTax" src="images/dropdown_none.png"> -->
+                                            <!-- <img class="jInactiveTax" style="display:none" src="images/dropdown_none_grey.png"> -->
+        
+                                        </div>
+        
+                                        <div style="position: absolute; left:0; top:100%; max-width:180px; display:none; z-index:2; white-space:nowrap"
+                                            class="dropdown-sel">
+        
+                                            <ul class="tax_dropdown" style="font-family:verdana, sans-serif;">
+                                                <li style="border-bottom:1px solid #d2d2d2;"><label><input
+                                                            onclick="changeTaxSelect(this);" type="checkbox" class="NoTax"
+                                                            data-tax="0" checked=""><span>No Tax</span></label></li>
+        
+                                                <!--Tax components: -->
+        
+                                                <li style="border-top:1px solid #d2d2d2;"><label><input
+                                                            onclick="changeTaxSelect(this);" type="checkbox"
+                                                            class="NewTax"><span>New Tax</span></label></li>
+                                            </ul>
+        
+                                        </div>
+        
+                                    </div>
+        
+                                </td>
+                                <td class="invoiceDataTax_hidden"> <input> <!-- Empty td-input to mimic TAX2 --> </td>
+        
+        
+        
+        
+                                <td class="invoiceDataAmount">
+        
+                                    <div style="position: absolute;width: 88px;height: 32px;"
+                                        onclick="alert('The amount is calculated automatically as soon as you have entered something into both the unit price and the quantity field.\n\nExample: If you wish to invoice a service for $100.00, you should enter 100.00 in the unit price field and 1.00 in the quantity field.')">
+                                    </div>
+                                    <input name="total[]" id="total[]" type="text" autocomplete="nope" readonly=""
+                                        class="inputInvoiceDataAmount" value="0.00">
+        
+                                </td>
+        
+                            </tr>
+        
+        
+        
+        
+                        </tbody>
+                    <!-- TB 4 -->
+                    </table>
+                </td>
+            </tr>
         </div>
     </main>
     <!-- invoice container -->
     <tbody>
-        <!-- Item / Description / Unit Price / Quantiy Amount (royalblue background)-->
-        <tr id="items-container">
-            <td colspan="100" style="width:100%;vertical-align:top;padding-top:35px;">
-                <!-- TB 4 -->
-                <input type="hidden" id="swapOccurred" name="swapOccurred" value="0" defaultvalue="0">
-                <table class="brb" id="dataTable" border="0" cellpadding="0" cellspacing="0" width="100%" style="vertical-align:top;">
-                    <tbody>
-                        <tr id="topRow" style="background-color:#54A0E7;height:30px;">
-                            <th style="width:14px;"></th>
-    
-                            <th id="item_headline"
-                                style="height:30px; color:#FFFFFD;font-family:arial;font-size:14px;font-weight:400;padding-left:8px;text-align:left;">
-                                Item</th>
-    
-                            <th id="description_headline"
-                                style="color:#FFFFFD;font-family:arial;font-size:14px;font-weight:400;padding-left:5px;text-align:left;">
-                                Description</th>
-    
-                            <th id="unit_price_headline"
-                                style="color:#FFFFFD;font-family:arial;font-size:14px;font-weight:400;padding-left:0px;text-align:right;padding-right:4px;">
-                                Unit Price</th>
-    
-                            <th id="quantity_headline"
-                                style="color:#FFFFFD;font-family:arial;font-size:14px;font-weight:400;padding-left:0px;text-align:right;padding-right:4px;">
-                                Quantity</th>
-    
-    
-    
-    
-                            <th id="topRowTax"
-                                style="display:none;color:#FFFFFD;font-family:arial;font-size:14px;font-weight:400;padding-left:0px;text-align:right;padding-right:26px;padding-left:35px;">
-                                Tax <input type="hidden" name="sales_tax_new_enabled" value="true"></th>
-    
-    
-                            <th id="amount_headline"
-                                style="color:#FFFFFD;font-family:arial;font-size:14px;font-weight:400;padding-left:0px;text-align:right;padding-right:10px;">
-                                Amount</th>
-    
-                        </tr>
-    
-    
-    
-    
-    
-                        <tr class="invoiceDataHeadRow">
-                            <input type="hidden" name="lineid[]" id="lineid[]" value="0">
-                            <input type="hidden" name="isdirty[]" id="isdirty[]" value="0">
-                            <input type="hidden" name="numRows" id="numRows" value="2">
-    
-                            <td class="invoiceDataDelete">
-                                <!-- <img style="" onclick="zapthisrow(this,'dataTable');" border="0" title="Delete Line"
-                                    src="images/delete_item.gif"> -->
-                            </td>
-    
-    
-                            <td class="invoiceDataItem">
-    
-                                <select onfocus="invoiceForm_changeBackground(this,'#FFFADC');"
-                                    onfocusin="objSelected=this; invoiceForm_changeBackground(this,'#FFFADC');"
-                                    onblur="invoiceForm_changeBackground(this,'#FFFFFF');" name="item[]" id="itemSelect0"
-                                    class="inputInvoiceDataItem ">
-    
-                                    <option value="" selected="selected"></option>
-                                    <option value="Days">Days</option>
-                                    <option value="Hours">Hours</option>
-                                    <option value="Product">Product</option>
-                                    <option value="Service">Service</option>
-                                    <option value="Expense">Expense</option>
-                                    <option value="Discount_aynax">Discount</option>
-                                </select>
-                                <input type="hidden" name="expense_category[]" value="Other Expenses">
-    
-                            </td>
-    
-    
-    
-                            <td class="invoiceDataDescription">
-    
-    
-    
-    
-    
-                                <textarea name="description[]" id="description[]" rows="1" cols="40"
-                                    class="inputInvoiceDataDescription"
-                                    onfocus="invoiceForm_changeBackground(this,'#FFFADC');"
-                                    onblur="invoiceForm_changeBackground(this,'#FFFFFF');" onkeyup="sz(this);"></textarea>
-                                <input type="hidden" name="expense_id[]" value="">
-                                <input type="hidden" name="project_id[]" value="0">
-                                <input type="hidden" name="hour_id[]" value="0">
-                                <input type="hidden" class="jPaymentId" name="payment_id[]" value="0">
-    
-    
-                            </td>
-    
-    
-                            <td class="invoiceDataPriceOrQty">
-                                <input name="unit_price[]" id="unit_price[]" type="text" autocomplete="nope"
-                                    class="inputInvoiceDataPriceOrQty" style="color:silver;"
-                                    onkeyup="sanitizeInvoiceLineValues(this);"
-                                    onblur="invoiceForm_changeBackground(this,'#FFFFFF');forceDiscountNegative(this);checkIfEmpty(this);reCalculate(this, 'dataTable', this.value);"
-                                    onfocus="valueItemFocus(this)" value="0.00">
-                            </td>
-    
-                            <td class="invoiceDataPriceOrQty">
-    
-                                <input name="qty[]" id="qty[]" type="text" autocomplete="nope"
-                                    class="inputInvoiceDataPriceOrQty" style="color:silver;"
-                                    onkeyup="sanitizeInvoiceLineValues(this);"
-                                    onblur="invoiceForm_changeBackground(this,'#FFFFFF');checkIfEmpty(this);reCalculate(this, 'dataTable', this.value);"
-                                    onfocus="valueItemFocus(this)" value="0.00">
-    
-                            </td>
-    
-    
-    
-    
-    
-                            <td class="tax1 invoiceDataTax_hidden" style="">
-    
-                                <!-- Note: The first input of class 'tax1' must be the total tax in order for the recalculate function in javascript.js to work.  -->
-                                <input name="tax_total[]" id="tax_total[]" class="tax_total" type="hidden" value="0.00">
-    
-                                <!-- tax inputs - for saving separate tax rates in invoice_line -->
-                                <input type="hidden" name="tax[]" class="tax_rate" value="">
-                                <input type="hidden" name="tax2[]" class="tax2_rate" value="">
-                                <input type="hidden" name="tax3[]" class="tax3_rate" value="">
-    
-                                <!-- tax-id inputs: -->
-                                <input type="hidden" name="tax_id[]" class="tax_id" value="">
-                                <input type="hidden" name="tax2_id[]" class="tax2_id" value="">
-                                <input type="hidden" name="tax3_id[]" class="tax3_id" value="">
-    
-                                <div style="position: relative;">
-    
-                                    <div class="downarrow currentTax" onclick="focusTaxSelect(this)"
-                                        style="font-size: 13px; padding: 5px; font-family: verdana; color: silver; background-color: rgb(255, 255, 255);"
-                                        data-groupid="">
-    
-                                        <span class="jtaxTotal">0.00% </span>
-                                        <!-- <img class="jActiveTax" src="images/dropdown_none.png"> -->
-                                        <!-- <img class="jInactiveTax" style="display:none" src="images/dropdown_none_grey.png"> -->
-    
-                                    </div>
-    
-                                    <div style="position: absolute; left:0; top:100%; max-width:180px; display:none; z-index:2; white-space:nowrap"
-                                        class="dropdown-sel">
-    
-                                        <ul class="tax_dropdown" style="font-family:verdana, sans-serif;">
-                                            <li style="border-bottom:1px solid #d2d2d2;"><label><input
-                                                        onclick="changeTaxSelect(this);" type="checkbox" class="NoTax"
-                                                        data-tax="0" checked=""><span>No Tax</span></label></li>
-    
-                                            <!--Tax components: -->
-    
-                                            <li style="border-top:1px solid #d2d2d2;"><label><input
-                                                        onclick="changeTaxSelect(this);" type="checkbox"
-                                                        class="NewTax"><span>New Tax</span></label></li>
-                                        </ul>
-    
-                                    </div>
-    
-                                </div>
-    
-                            </td>
-                            <td class="invoiceDataTax_hidden"> <input> <!-- Empty td-input to mimic TAX2 --> </td>
-    
-    
-    
-    
-                            <td class="invoiceDataAmount">
-    
-                                <div style="position: absolute;width: 88px;height: 32px;"
-                                    onclick="alert('The amount is calculated automatically as soon as you have entered something into both the unit price and the quantity field.\n\nExample: If you wish to invoice a service for $100.00, you should enter 100.00 in the unit price field and 1.00 in the quantity field.')">
-                                </div>
-                                <input name="total[]" id="total[]" type="text" autocomplete="nope" readonly=""
-                                    class="inputInvoiceDataAmount" value="0.00">
-    
-                            </td>
-    
-                        </tr>
-    
-    
-                        <tr class="invoiceDataHeadRow">
-                            <input type="hidden" name="lineid[]" id="lineid[]" value="1">
-                            <input type="hidden" name="isdirty[]" id="isdirty[]" value="0">
-                            <input type="hidden" name="numRows" id="numRows" value="2">
-    
-                            <td class="invoiceDataDelete">
-                                <!-- <img style="" onclick="zapthisrow(this,'dataTable');" border="0" title="Delete Line"
-                                    src="images/delete_item.gif"> -->
-                            </td>
-    
-    
-                            <td class="invoiceDataItem">
-    
-                                <select onfocus="invoiceForm_changeBackground(this,'#FFFADC');"
-                                    onfocusin="objSelected=this; invoiceForm_changeBackground(this,'#FFFADC');"
-                                    onblur="invoiceForm_changeBackground(this,'#FFFFFF');" name="item[]" id="itemSelect1"
-                                    class="inputInvoiceDataItem ">
-    
-                                    <option value="" selected="selected"></option>
-                                    <option value="Days">Days</option>
-                                    <option value="Hours">Hours</option>
-                                    <option value="Product">Product</option>
-                                    <option value="Service">Service</option>
-                                    <option value="Expense">Expense</option>
-                                    <option value="Discount_aynax">Discount</option>
-                                </select>
-                                <input type="hidden" name="expense_category[]" value="Other Expenses">
-    
-                            </td>
-    
-    
-    
-                            <td class="invoiceDataDescription">
-    
-    
-    
-    
-    
-                                <textarea name="description[]" id="description[]" rows="1" cols="40"
-                                    class="inputInvoiceDataDescription"
-                                    onfocus="invoiceForm_changeBackground(this,'#FFFADC');"
-                                    onblur="invoiceForm_changeBackground(this,'#FFFFFF');" onkeyup="sz(this);"></textarea>
-                                <input type="hidden" name="expense_id[]" value="">
-                                <input type="hidden" name="project_id[]" value="0">
-                                <input type="hidden" name="hour_id[]" value="0">
-                                <input type="hidden" class="jPaymentId" name="payment_id[]" value="0">
-    
-    
-                            </td>
-    
-    
-                            <td class="invoiceDataPriceOrQty">
-                                <input name="unit_price[]" id="unit_price[]" type="text" autocomplete="nope"
-                                    class="inputInvoiceDataPriceOrQty" style="color:silver;"
-                                    onkeyup="sanitizeInvoiceLineValues(this);"
-                                    onblur="invoiceForm_changeBackground(this,'#FFFFFF');forceDiscountNegative(this);checkIfEmpty(this);reCalculate(this, 'dataTable', this.value);"
-                                    onfocus="valueItemFocus(this)" value="0.00">
-                            </td>
-    
-                            <td class="invoiceDataPriceOrQty">
-    
-                                <input name="qty[]" id="qty[]" type="text" autocomplete="nope"
-                                    class="inputInvoiceDataPriceOrQty" style="color:silver;"
-                                    onkeyup="sanitizeInvoiceLineValues(this);"
-                                    onblur="invoiceForm_changeBackground(this,'#FFFFFF');checkIfEmpty(this);reCalculate(this, 'dataTable', this.value);"
-                                    onfocus="valueItemFocus(this)" value="0.00">
-    
-                            </td>
-    
-    
-    
-    
-    
-                            <td class="tax1 invoiceDataTax_hidden" style="">
-    
-                                <!-- Note: The first input of class 'tax1' must be the total tax in order for the recalculate function in javascript.js to work.  -->
-                                <input name="tax_total[]" id="tax_total[]" class="tax_total" type="hidden" value="0.00">
-    
-                                <!-- tax inputs - for saving separate tax rates in invoice_line -->
-                                <input type="hidden" name="tax[]" class="tax_rate" value="">
-                                <input type="hidden" name="tax2[]" class="tax2_rate" value="">
-                                <input type="hidden" name="tax3[]" class="tax3_rate" value="">
-    
-                                <!-- tax-id inputs: -->
-                                <input type="hidden" name="tax_id[]" class="tax_id" value="">
-                                <input type="hidden" name="tax2_id[]" class="tax2_id" value="">
-                                <input type="hidden" name="tax3_id[]" class="tax3_id" value="">
-    
-                                <div style="position: relative;">
-    
-                                    <div class="downarrow currentTax" onclick="focusTaxSelect(this)"
-                                        style="font-size: 13px; padding: 5px; font-family: verdana; color: silver; background-color: rgb(255, 255, 255);"
-                                        data-groupid="">
-    
-                                        <span class="jtaxTotal">0.00% </span>
-                                        <!-- <img class="jActiveTax" src="images/dropdown_none.png"> -->
-                                        <!-- <img class="jInactiveTax" style="display:none" src="images/dropdown_none_grey.png"> -->
-    
-                                    </div>
-    
-                                    <div style="position: absolute; left:0; top:100%; max-width:180px; display:none; z-index:2; white-space:nowrap"
-                                        class="dropdown-sel">
-    
-                                        <ul class="tax_dropdown" style="font-family:verdana, sans-serif;">
-                                            <li style="border-bottom:1px solid #d2d2d2;"><label><input
-                                                        onclick="changeTaxSelect(this);" type="checkbox" class="NoTax"
-                                                        data-tax="0" checked=""><span>No Tax</span></label></li>
-    
-                                            <!--Tax components: -->
-    
-                                            <li style="border-top:1px solid #d2d2d2;"><label><input
-                                                        onclick="changeTaxSelect(this);" type="checkbox"
-                                                        class="NewTax"><span>New Tax</span></label></li>
-                                        </ul>
-    
-                                    </div>
-    
-                                </div>
-    
-                            </td>
-                            <td class="invoiceDataTax_hidden"> <input> <!-- Empty td-input to mimic TAX2 --> </td>
-    
-    
-    
-    
-                            <td class="invoiceDataAmount">
-    
-                                <div style="position: absolute;width: 88px;height: 32px;"
-                                    onclick="alert('The amount is calculated automatically as soon as you have entered something into both the unit price and the quantity field.\n\nExample: If you wish to invoice a service for $100.00, you should enter 100.00 in the unit price field and 1.00 in the quantity field.')">
-                                </div>
-                                <input name="total[]" id="total[]" type="text" autocomplete="nope" readonly=""
-                                    class="inputInvoiceDataAmount" value="0.00">
-    
-                            </td>
-    
-                        </tr>
-    
-    
-    
-    
-                    </tbody>
-                <!-- TB 4 -->
-                </table>
-            </td>
-        </tr>
-        <!-- New Line -->
         <tr>
             <td style="padding-top:10px;margin:0px;text-align:left;">
                 <button type="button" onclick="newLineClick()"

@@ -3,6 +3,7 @@ export const translationTextArea = document.querySelector('.translation textarea
 const changeLangItems = document.querySelectorAll('.change-lang-container > *');
 const playBtn = document.querySelector('#playBtn');
 const playItems = document.querySelectorAll('.play-container > *');
+const homelink = document.querySelector('#homelink');
 let iChangeLangItems = 0;
 let iPlayItems = 1 /** index of the playBtn */;
 let textareaFocus = false;
@@ -28,6 +29,9 @@ addEventListener('keydown', (e) => {
         keys.shift.pressed = true;
     }
     if (!textareaFocus) {
+        if (letter === 'h') {
+            homelink.focus()
+        }
         if (letter === 't') {
             scrollTo(0, 0);
             translateSentenceTextArea.focus();
