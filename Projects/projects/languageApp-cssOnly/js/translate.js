@@ -15,8 +15,6 @@ translateSentenceTextArea.addEventListener('input', e => {
     if(e.target.value == 't' && !started){
         pasteBtn.classList.add('active')
         e.target.value = ''
-        console.log(e.target.value)
-        console.log(started)
     }
     else{
         pasteBtn.classList.remove('active')
@@ -44,9 +42,6 @@ translateSentence.addEventListener('focusin', e => {
 })
 translation.addEventListener('focusin', e => {
     translateBtn.classList.remove('active')
-})
-translateSentence.addEventListener('focusout', e => {
-    // translateBtn.classList.remove('active')
 })
 translateSentenceTextArea.addEventListener('keyup', e => {
     keys.cmd.pressed = false
