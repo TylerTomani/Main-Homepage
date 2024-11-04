@@ -49,7 +49,6 @@ select:focus {
 }
 .to-from-container > #to{
 }
-
 #to_name,
 #from_name {
     border: 1px solid black;
@@ -61,7 +60,6 @@ select:focus {
     font-size: 13px;
     color: #3c3c3c;
 }
-
 #to_address,
 #from_address {
     width: 100%;
@@ -81,7 +79,6 @@ font-family: verdana;
     
 }
 #to_new_customer{
-    /* outline: none; */
     border: 1px solid black;
     width: 100%;
     padding: 2% 0;
@@ -91,8 +88,8 @@ font-family: verdana;
     font-size: 13px;
     color: silver;
 }
-select:active,
-select:focus {
+#invoice_num_container {
+    display: flex;
 }
 
 #to_nameTD>select {
