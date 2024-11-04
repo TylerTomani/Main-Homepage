@@ -5,6 +5,33 @@ import { translationTextArea } from "./letterFocus.js";
 import { keys } from "./letterFocus.js";
 const translateBtn = document.getElementById('translateBtn')
 const pasteBtn = document.getElementById('pasteBtn')
+let started = false
+
+/**
+    Fix the below code in textarea so the pasteBtn only appears if text is in 
+ clipboard.
+ */
+translateSentenceTextArea.addEventListener('input', e => {
+    if(e.target.value == 't' && !started){
+        pasteBtn.classList.add('active')
+        e.target.value = ''
+        console.log(e.target.value)
+        console.log(started)
+    }
+    else{
+        pasteBtn.classList.remove('active')
+    }
+    started = true
+})
+translateSentenceTextArea.addEventListener('focus', e => {
+    if (e.target.value == '') {
+        pasteBtn.classList.add('active')
+    } 
+})
+translateSentenceTextArea.addEventListener('focusout', e => {
+    pasteBtn.classList.remove('active')
+    
+})
 addEventListener('keydown', e => {
     let letter = e.key.toLowerCase()
     if (letter == 'meta') {
@@ -12,28 +39,6 @@ addEventListener('keydown', e => {
     }
 })
 
-let lastTextArea,lastPlayBtn,lastLanguageBtn
-translateSentenceTextArea.addEventListener('input', e => {
-    console.log(e.target.value)
-    if(e.target.value == ''){
-        console.log(e.target)
-        pasteBtn.classList.add('active')
-    }
-    else{
-        console.log(e.target)
-        pasteBtn.classList.remove('active')
-    }
-})
-translateSentenceTextArea.addEventListener('focus', e => {
-    if (e.target.value == '') {
-        console.log(e.target)
-        pasteBtn.classList.add('active')
-    }
-})
-translateSentenceTextArea.addEventListener('focusout', e => {
-    pasteBtn.classList.remove('active')
-    
-})
 translateSentence.addEventListener('focusin', e => {
     translateBtn.classList.add('active')
 })

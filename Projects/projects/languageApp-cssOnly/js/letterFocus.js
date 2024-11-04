@@ -1,5 +1,6 @@
 export const translateSentenceTextArea = document.querySelector('.translate-sentence textarea');
 export const translationTextArea = document.querySelector('.translation textarea');
+// import { translateBtn } from "./translate.js";
 const changeLangItems = document.querySelectorAll('.change-lang-container > *');
 const playBtn = document.querySelector('#playBtn');
 const playItems = document.querySelectorAll('.play-container > *');
@@ -9,12 +10,12 @@ let iPlayItems = 1 /** index of the playBtn */;
 let textareaFocus = false;
 let firstPress = true;  // Track first press of 'L'
 
+let lastTextArea, lastPlayBtn, lastLanguageBtn
+
 export const keys = {
     cmd: { pressed: false },
     shift: { pressed: false },
 };
-let debounceTimeout;
-
 // Reset shift key on keyup
 addEventListener('keyup', (e) => {
     if (e.key.toLowerCase() === 'shift') {
@@ -36,32 +37,10 @@ addEventListener('keydown', (e) => {
             scrollTo(0, 0);
             translateSentenceTextArea.focus();
         }
-        ////////////  The below focus is not working properly for 'p' and 'l'
-        if(letter == 'p'){
-            if (keys.shift.pressed) {
-                // Navigate backward
-                iPlayItems = (iPlayItems + playItems.length - 1) % playItems.length;
-            } else {
-                // Navigate forward
-                iPlayItems = (iPlayItems + 1) % playItems.length;
-            }
-            playItems[iPlayItems].focus();
-            console.log(iPlayItems);
-        }
-        if (letter === 'l') {
-            if (firstPress) {
-                iChangeLangItems = 0;  // Start at the first item
-                firstPress = false;     // Disable first press tracking
-            } else if (keys.shift.pressed) {
-                // Navigate backward
-                iChangeLangItems = (iChangeLangItems + changeLangItems.length - 1) % changeLangItems.length;
-            } else {
-                // Navigate forward
-                iChangeLangItems = (iChangeLangItems + 1) % changeLangItems.length;
-            }
-            changeLangItems[iChangeLangItems].focus();
-            console.log(iChangeLangItems);
-        }
+        ////////////  This below code could be cleaner
+        
+        
+        ////////////////////////////////////////////////
     }
         
 });
@@ -74,3 +53,14 @@ addEventListener('keydown', (e) => {
         textareaFocus = false
     })
 })
+changeLangItems.forEach(el => {
+    el.addEventListener('focus', e => {
+        lastLanguageBtn = e.target
+    })
+})
+playItems.forEach(el => {
+    el.addEventListener('focus', e => {
+        lastPlayBtn = e.target
+    })
+})
+
