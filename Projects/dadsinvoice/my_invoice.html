@@ -213,41 +213,42 @@ Mike Tomani 585-203-6767</textarea>
             <div id="items-container">
                 <div  style="width:100%;vertical-align:top;padding-top:35px;">
                     <!-- TB 4 -->
-                    <input type="hidden" id="swapOccurred" name="swapOccurred" value="0" defaultvalue="0">
+                    <!-- <input type="hidden" id="swapOccurred" name="swapOccurred" value="0" defaultvalue="0"> -->
                     <table class="brb" id="dataTable" cellpadding="0" cellspacing="0" width="100%" style="vertical-align:top;">
                         <tbody>
                             <tr id="topRow" style="background-color:#54A0E7;height:30px;">
                                 <th style="width:14px;"></th>
-        
+                            
                                 <th id="item_headline"
                                     style="height:30px; color:#FFFFFD;font-family:arial;font-size:14px;font-weight:400;padding-left:8px;text-align:left;">
                                     Item</th>
-        
+                            
                                 <th id="description_headline"
                                     style="color:#FFFFFD;font-family:arial;font-size:14px;font-weight:400;padding-left:5px;text-align:left;">
                                     Description</th>
-        
+                            
                                 <th id="unit_price_headline"
                                     style="color:#FFFFFD;font-family:arial;font-size:14px;font-weight:400;padding-left:0px;text-align:right;padding-right:4px;">
                                     Unit Price</th>
-        
+                            
                                 <th id="quantity_headline"
                                     style="color:#FFFFFD;font-family:arial;font-size:14px;font-weight:400;padding-left:0px;text-align:right;padding-right:4px;">
                                     Quantity</th>
-        
-        
-        
-        
+                            
+                            
+                            
+                            
                                 <th id="topRowTax"
                                     style="display:none;color:#FFFFFD;font-family:arial;font-size:14px;font-weight:400;padding-left:0px;text-align:right;padding-right:26px;padding-left:35px;">
                                     Tax <input type="hidden" name="sales_tax_new_enabled" value="true"></th>
-        
-        
+                            
+                            
                                 <th id="amount_headline"
                                     style="color:#FFFFFD;font-family:arial;font-size:14px;font-weight:400;padding-left:0px;text-align:right;padding-right:10px;">
                                     Amount</th>
-        
+                            
                             </tr>
+                            
                             <tr class="invoiceDataHeadRow">
                                 <input type="hidden" name="lineid[]" id="lineid[]" value="0">
                                 <input type="hidden" name="isdirty[]" id="isdirty[]" value="0">
@@ -256,12 +257,15 @@ Mike Tomani 585-203-6767</textarea>
                                     <!-- <img style="" onclick="zapthisrow(this,'dataTable');" border="0" title="Delete Line"
                                         src="images/delete_item.gif"> -->
                                 </td>
+                                <!-- Item -->
                                 <td class="invoiceDataItem">
-                                    <select onfocus="invoiceForm_changeBackground(this,'#FFFADC');"
+                                    <!-- <select onfocus="invoiceForm_changeBackground(this,'#FFFADC');"
                                         onfocusin="objSelected=this; invoiceForm_changeBackground(this,'#FFFADC');"
                                         onblur="invoiceForm_changeBackground(this,'#FFFFFF');" name="item[]" id="itemSelect0"
+                                        class="inputInvoiceDataItem "> -->
+                                    <select
+                                      name="item[]" id="itemSelect0"
                                         class="inputInvoiceDataItem ">
-        
                                         <option value="" selected="selected"></option>
                                         <option value="Days">Days</option>
                                         <option value="Hours">Hours</option>
@@ -272,11 +276,15 @@ Mike Tomani 585-203-6767</textarea>
                                     </select>
                                     <input type="hidden" name="expense_category[]" value="Other Expenses">
                                 </td>
+                                <!-- Description -->
                                 <td class="invoiceDataDescription">
-                                    <textarea name="description[]" id="description[]" rows="1" cols="40"
+                                    <!-- <textarea name="description[]" id="description[]" rows="1" cols="40"
                                         class="inputInvoiceDataDescription"
                                         onfocus="invoiceForm_changeBackground(this,'#FFFADC');"
-                                        onblur="invoiceForm_changeBackground(this,'#FFFFFF');" onkeyup="sz(this);"></textarea>
+                                        onblur="invoiceForm_changeBackground(this,'#FFFFFF');" onkeyup="sz(this);"></textarea> -->
+                                    <textarea name="description[]" id="description[]" rows="1" cols="40"
+                                        class="inputInvoiceDataDescription"
+                                        ></textarea>
                                     <input type="hidden" name="expense_id[]" value="">
                                     <input type="hidden" name="project_id[]" value="0">
                                     <input type="hidden" name="hour_id[]" value="0">
@@ -456,10 +464,6 @@ Mike Tomani 585-203-6767</textarea>
                                 </td>
         
                             </tr>
-        
-        
-        
-        
                         </tbody>
                     <!-- TB 4 -->
                     </table>
