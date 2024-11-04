@@ -1,11 +1,11 @@
 header.gb_jd-header {
     display: flex;
-    background-image: linear-gradient(to right,
+    /* background-image: linear-gradient(to right,
         rgba(0, 102, 255, 0.2),
         rgb(255,165, 0,.2),
         rgb(255, 255, 0, .2),
         rgb(255, 165, 0, .4),
-        rgb(255, 30, 255, .2));
+        rgb(255, 30, 255, .2)); */
     width: 100%;
     overflow-x: hidden;
     justify-content: space-between;
