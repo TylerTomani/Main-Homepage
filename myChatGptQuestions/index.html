@@ -6,14 +6,17 @@
     <title>my chat gpt questions</title>
     <link rel="stylesheet" href="css/myChatGpt-header.css">
     <link rel="stylesheet" href="css/myChatgpt-styles.css">
-    <link rel="stylesheet" href="css/questions.css">
     <link rel="stylesheet" href="css/flex.css">
     <link rel="stylesheet" href="css/copy-code.css">
+    
+    <link rel="stylesheet" href="css/topic-questions.css">
     <script type="module" src="js/letterFocus-myChatGpt.js" defer></script>
     <script type="module" src="js/toggleSideBar.js" defer></script>
     <script type="module" src="js/questionsLoad.js" defer></script>
     <script type="module" src="js/toggleQuestions.js" defer></script>
     <script type="module" src="../js/documentation-templates/copy-code.js" defer></script>
+    <!-- This is for questions inside topic's page -->
+    <script type="module" src="js/dropdown.js" defer></script>
     
 </head>
 <body>
@@ -62,9 +65,11 @@
         <!-- ChatHistory side bar topics -->
         <div class="draggable active">
             <h2>ChatHistory</h2>
-            <h2>Topics</h2>
+            <h3>Topics</h3>
             <ul class="topics-container">
-                <li><a autofocus  id="github" href="topics/github/github.html">Github</a></li>
+                <li><a autofocus  id="github" href="topics/github/github.html">Github</a>
+                    
+                </li>
                 <li><a id="javascript" href="topics/javascript/javascript.html">Javascript</a>
                     <ul>
                         <li><a href="#" class="topic">Inject Javascript into HTML</a></li>
