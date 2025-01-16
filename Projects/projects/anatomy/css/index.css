@@ -1,10 +1,20 @@
+.cats button {
+    width: 20vw;
+    height: 5vh;
+    margin: .5%;
+
+}
 .images-container {
-    /* border: 10px blue solid; */
     display: flex;
+    flex-wrap: wrap;
 }
 .images-container > .img-container{
     /* display: flex; */
-    flex-basis: 40%;
+    flex-basis: 33%;
+}
+.img-container:active,.img-container:focus{
+    border: 5px solid blue;
+    box-shadow: 0 0 2px 2px blue;
 }
 .img-container > img {
     width: 100%;
