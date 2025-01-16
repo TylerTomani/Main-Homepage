@@ -4,7 +4,7 @@
 }
 .images-container > .img-container{
     /* display: flex; */
-    flex-basis: 50%;
+    flex-basis: 40%;
 }
 .img-container > img {
     width: 100%;
